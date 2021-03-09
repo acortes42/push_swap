@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:25:09 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 21:02:56 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:09:57 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,12 @@
 
 void insertionSort(int arr[], int n) 
 { 
-    int i, key, j; 
-    for (i = 1; i < n; i++)
+    int i;
+	int	key;
+	int	j;
+
+	i = 1;
+	while (i < n)
     { 
         key = arr[i]; 
         j = i - 1; 
@@ -24,7 +28,8 @@ void insertionSort(int arr[], int n)
             arr[j + 1] = arr[j]; 
             j = j - 1; 
         } 
-        arr[j + 1] = key; 
+        arr[j + 1] = key;
+		i++;
     } 
 }
 

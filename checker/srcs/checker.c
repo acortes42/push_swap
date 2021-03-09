@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 17:04:55 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 20:32:17 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/09 21:10:20 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void ft_init_struct(s_struct *s_alpha)
 			break;
 	}
 	s_alpha->parseString = ft_split(s_alpha->string, ' ');
-	s_alpha->counter = 0;
 	return ;
 }
 
