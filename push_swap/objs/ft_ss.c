@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/04 17:42:48 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 14:58:01 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/10 20:26:34 by acortes-          #+#    #+#             */
+/*   Updated: 2021/03/10 20:26:44 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../push_swap.h"
+#include "../libft/libft.h"
 
-int	ft_isdigit(int c)
+void ft_ss(t_list *a, t_list *b)
 {
-	int x;
-
-	x = 0;
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	ft_sa(a);
+	ft_sb(b);
 }

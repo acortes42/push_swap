@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 10:40:43 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 14:47:09 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/10 20:26:08 by acortes-          #+#    #+#             */
+/*   Updated: 2021/03/10 20:26:40 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include "../libft/libft.h"
 
-void	ft_putstr(char *s)
+void ft_sa(t_list *t)
 {
-	int i;
+	t_list *temp;
+	temp = t;
 
-	i = 0;
-	if (!(s))
-		return ;
-	while (s[i])
+	if (temp != NULL && temp->next != NULL)
 	{
-		write(0, &s[i], 1);
-		i++;
+	ft_swap(temp->content, temp->next->content);
+	temp = temp->next->next;
 	}
 }

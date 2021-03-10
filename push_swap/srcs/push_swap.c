@@ -5,47 +5,103 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 14:41:10 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 15:01:57 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/03/10 20:29:51 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+#include "../libft/libft.h"
 
-int ft_check_if_correct_args(int x, char **argv)
+int ft_ptoint(int *p)
 {
-	int counter;
+	int n;
+	n = *p;
+	return(n);
+}
 
-	counter  = 0;
-	while (counter < x)
-	{
-		if (!)
-	}
+void print_list(t_list *a, t_list *b)
+{
+
+    printf("---------------------------------------- \n");
+
+    while(a || b)
+    {
+		if (a)
+		{
+        printf("%d", ft_ptoint(a->content));
+        a = a->next;
+		}
+		printf("\t\t\t\t\t");
+		if (b)
+		{
+		printf("%d", ft_ptoint(b->content));
+        b = b->next;
+		}
+	printf("\n");
+    }
+
+    printf("END\n");
+}
+
+void delete_first_node(t_list **head) 
+{
+
+  t_list *tmp;
+
+  if(head == NULL || *head == NULL) 
+  	return ;
+
+  tmp = *head;
+  *head = (*head)->next;
+  free(tmp);
+}
+
+void ft_swap(int* a, int* b)
+{
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 int main(int argc, char **argv)
 {
-	int x;
+	t_list *a;
+	t_list *b;
+	t_list *temp;
+	t_list *temp2;
 
-	x = 0;
-	if (argc != 0)
-	{
-		if (ft_check_if_correct_args(argc, argv) == 1)
+	int aux[10000];
+	void (*f)();
+
+	int i;
+	int j;
+	i = 1 ;
+	while (i < argc)
 		{
-				ft_putstr(ANSI_COLOR_MAGENTA);
-				ft_putstr("A problem have been detected in the arguments\n");
-				ft_putstr(ANSI_COLOR_RESET);
-				return (1);
+			aux[i] = ft_atoi(argv[i]);
+			temp = ft_lstnew(&aux[i]);
+			ft_lstadd_back(&a, temp);
+			i++;
 		}
-		while (x < argc)
+
+	ft_lstadd_back(&b, NULL);
+	j = 0;
+	while (j < 4)
 		{
-			ft_check_args(argv);
-			x++;
+			aux[j] = ft_atoi(argv[j]);
+			temp2 = ft_lstnew(&aux[j]);
+			ft_lstadd_back(&b, temp2);
+			j++;
 		}
-		return (0);
-	}
-	ft_putstr(ANSI_COLOR_MAGENTA);
-	ft_putstr("Insufient number of arguments\n");
-	ft_putstr(ANSI_COLOR_RESET);
-	return (1);
+
+	print_list(a, b);
+//	ft_sa(a);
+	ft_pb(&a, &b);
+	printf("\n");
+	print_list(a,b);
+	//if (argc == 4)
+	//	ft_3num(t);
+	return 0;
 }
