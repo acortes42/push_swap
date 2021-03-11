@@ -6,12 +6,20 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:36 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/11 16:06:05 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/11 18:00:30 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_GREEN   "\x1b[32m"
+# define ANSI_COLOR_YELLOW  "\x1b[33m"
+# define ANSI_COLOR_BLUE    "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN    "\x1b[36m"
+# define ANSI_COLOR_RESET   "\x1b[0m"
 
 #include "libft/libft.h"
 #include <stdio.h>
@@ -28,6 +36,7 @@ typedef struct	s_struct
 // SRCS
 
 void	ft_swap(int* a, int* b);
+int		ft_check_if_correct(char **argv, int argc);
 
 // OBJS
 

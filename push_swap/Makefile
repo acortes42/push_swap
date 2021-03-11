@@ -2,7 +2,7 @@ UTILS			= utils/ft_sa.c utils/ft_sb.c utils/ft_ss.c utils/ft_pb.c utils/ft_ra.c 
 					utils/ft_rb.c utils/ft_rr.c utils/ft_rra.c utils/ft_rrb.c utils/ft_rrr.c \
 						utils/ft_pa.c utils/ft_delete_first_node.c utils/ft_print_list.c
 
-SRCS			= srcs/push_swap.c
+SRCS			= srcs/push_swap.c srcs/ft_check_if_correct.c srcs/ft_ordenation.c
 
 CFLAGS			= 
 

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 15:06:47 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/11 16:28:17 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:29:06 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 void delete_last_node(t_list* head)
 {
-    t_list* currNode = head;
+    t_list* currNode;
+    
+    currNode = head;
     if(head == NULL)
         return;
     if(head->next == NULL)
