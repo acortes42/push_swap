@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/11 16:31:23 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:45:57 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,17 @@ int main(int argc, char **argv)
 		}
 
 	//ft_lstadd_back(&b, NULL);
-	j = 1;
-	while (j < 4)
+	/*j = 1;
+	while (j < 2)
 		{
-			aux2[j] = j;
+			aux2[j] = 0;
 			temp2 = ft_lstnew(&aux2[j]);
 			ft_lstadd_back(&b, temp2);
 			j++;
 		}
-
+*/
 	print_list(a, b);
-	ft_rrr(&a, &b);
+	ft_sb(a);
 	printf("\n");
 	print_list(a, b);
 	//if (argc == 4)
