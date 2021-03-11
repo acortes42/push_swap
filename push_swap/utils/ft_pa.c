@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rr.c                                            :+:      :+:    :+:   */
+/*   ft_pa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 20:27:16 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/10 21:06:48 by jruiz-ro         ###   ########.fr       */
+/*   Created: 2021/03/10 20:26:54 by acortes-          #+#    #+#             */
+/*   Updated: 2021/03/11 15:03:14 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include "../libft/libft.h"
 
-void ft_rr(t_list **a, t_list **b)
+void ft_pa(t_list **a, t_list **b)
 {
-	ft_ra(a);
-	ft_rb(b);
+	t_list *temp;
+	t_list	*p;
+
+	p = *b;
+	temp = ft_lstnew(p->content);
+	ft_lstadd_front(a, temp);
+	delete_first_node(b);
+	print_list(*a,*b);
 }
