@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_if_all_correct.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:25:09 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/10 21:06:46 by jruiz-ro         ###   ########.fr       */
+/*   Updated: 2021/03/11 18:30:52 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int ft_check_if_all_correct(s_struct *s_alpha, char **argv, int argc)
 	i = 0;
 	while(count < argc)
 	{
+		if (ft_atoi(argv[count]) == -2847483648)
+			return (1);
 		s_alpha->all_int[i] = ft_atoi(argv[count]);
 		i++;
 		count++;

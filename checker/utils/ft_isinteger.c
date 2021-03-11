@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:22:31 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 20:26:08 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/11 18:26:31 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			ft_isinteger(char *str)
 	if (!str || *str == '\0' || !(trimmed = ft_trim(str)))
 		return (0);
 	i = trimmed;
+	printf("%s", i);
 	while (ft_isdigit(*i))
 		i++;
 	is_int = (*i == '\0' ? 1 : 0);
