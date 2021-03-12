@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/12 17:25:15 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/12 18:10:35 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,19 @@ int ft_check_repeated_nbr(int *arr, int argc)
 	return (0);
 }
 
-// Esta funcion es donde me quede
+int ft_ordenation(int *arr, int *arr_unordened, int i)
+{
+	int	x;
 
-t_list	*ft_lstnew_push(int content, int *arr, int *arr_unordened, int argc, int i)
+	x = 0;
+	while (arr_unordened[i] != arr[x])
+		x++;
+	return (x);
+}
+/*
+t_list	*ft_lstnew_push(int *content, int *arr, int *arr_unordened, int argc, int i)
 {
 	t_list	*new;
-	int		p_void[2];
 	int		x;
 
 	x = 0;
@@ -74,30 +81,20 @@ t_list	*ft_lstnew_push(int content, int *arr, int *arr_unordened, int argc, int 
 			break;
 		x++;
 	}
-	x = 0;
-	while (arr_unordened[i] != arr[x])
-		x++;
-	p_void[0] = content;
-	p_void[1] = x;
 	new->content = malloc(sizeof(int) * 2);
 	new->content = (void*)p_void;
-	/* Esto es lo que esta fallando
 
-	printf("Esto es content 1: %d\n", (int*)new->content[0]);
-	printf("Esto es content 2: %d\n", (int*)new->content[1]);
-	
-	*/
 	new->next = NULL;
 	return (new);
 }
-
+*/
 int main(int argc, char **argv)
 {
 	t_list *a;
 	t_list *b;
 	t_list *temp;
-	int aux[10000];
-	int arr[10000];
+	int aux[10000][3];
+	int arr[10000][3];
 	int arr_unordened[10000];
 
 	void (*f)();
@@ -124,8 +121,9 @@ int main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		aux[i] = ft_atoi(argv[i]);
-		temp = ft_lstnew_push(aux[i], arr, arr_unordened, argc - 1, i);
+		aux[i][0] = ft_atoi(argv[i]);
+		aux[i][1] = ft_ordenation(arr, arr_unordened, i);
+	//	temp = ft_lstnew_push(aux[i], arr, arr_unordened, argc - 1, i);
 		ft_lstadd_back(&a, temp);
 		i++;
 	}
