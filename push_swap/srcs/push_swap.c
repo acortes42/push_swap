@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/11 20:22:17 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/12 17:25:15 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,23 +58,35 @@ int ft_check_repeated_nbr(int *arr, int argc)
 
 // Esta funcion es donde me quede
 
-t_list	*ft_lstnew_push(void *content, int *arr, int *arr_unordened, int argc, int i)
+t_list	*ft_lstnew_push(int content, int *arr, int *arr_unordened, int argc, int i)
 {
 	t_list	*new;
+	int		p_void[2];
 	int		x;
 
 	x = 0;
 	new = (t_list *)malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->content = content;
 	while (x < argc)
 	{
 		if (arr[x] == arr_unordened[i])
 			break;
 		x++;
 	}
-	new->position = (void*)x;
+	x = 0;
+	while (arr_unordened[i] != arr[x])
+		x++;
+	p_void[0] = content;
+	p_void[1] = x;
+	new->content = malloc(sizeof(int) * 2);
+	new->content = (void*)p_void;
+	/* Esto es lo que esta fallando
+
+	printf("Esto es content 1: %d\n", (int*)new->content[0]);
+	printf("Esto es content 2: %d\n", (int*)new->content[1]);
+	
+	*/
 	new->next = NULL;
 	return (new);
 }
@@ -109,16 +121,11 @@ int main(int argc, char **argv)
 		printf("%s\nRepeated numbers %s\n", ANSI_COLOR_RED, ANSI_COLOR_RESET);
 		return (1);
 	}
-	i = 0;
-	while (i < argc - 1)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
+	i = 1;
 	while (i < argc)
 	{
 		aux[i] = ft_atoi(argv[i]);
-		temp = ft_lstnew_push(&aux[i], arr, arr_unordened, argc - 1, i);
+		temp = ft_lstnew_push(aux[i], arr, arr_unordened, argc - 1, i);
 		ft_lstadd_back(&a, temp);
 		i++;
 	}

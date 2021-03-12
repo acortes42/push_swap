@@ -32,8 +32,8 @@ fclean: clean
 	@rm -f *.o
 	@rm -f  srcs/*.o
 	@rm -f  utils/*.o
-	@rm -f  libft/*.o
-	@rm -f  libft/*.a
+#	@rm -f  libft/*.o
+#	@rm -f  libft/*.a
 	@rm -f  libft/*.h.gch
 	@rm -f *.out
 	@rm -f *.a
