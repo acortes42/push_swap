@@ -3,131 +3,115 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/12 18:10:35 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/25 18:44:37 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "../libft/libft.h"
 
-void ft_swap(int* a, int* b)
-{
-    int temp;
-    temp = *a;
-    *a = *b;
-    *b = temp;
-}
 
-void ft_insertion_sort(int arr[], int n)
+int	*insertionSort(int arr[])
 {
-    int i;
-	int	key;
+	int	n;
+	int	i;
 	int	j;
+	int tmp;
 
-	i = 1;
-	while (i < n)
-    {
-        key = arr[i];
-        j = i - 1;
-        while (j >= 0 && arr[j] > key)
-        {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-        }
-        arr[j + 1] = key;
-		i++;
-    }
-}
+	if (!arr)
+		return(0);
+	n = 0;
+	while(arr[n] != 0)
+		n++;
 
-int ft_check_repeated_nbr(int *arr, int argc)
-{
-	int x;
-
-	x = 0;
-	while (x < argc - 1)
+	i = 0;
+	j = 0;
+	while(i < n)
 	{
-		if (arr[x] == arr[x + 1])
-			return (1);
-		x++;
+		j = i + 1;
+		while(j < n)
+		{
+			if (arr[j] < arr[i])
+			{
+				tmp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = tmp;
+			}
+		j++;
+		}
+	i++;
 	}
-	return (0);
+	return(arr);
 }
 
-int ft_ordenation(int *arr, int *arr_unordened, int i)
+int ft_ptoint(int *p)
 {
-	int	x;
+	int n;
 
-	x = 0;
-	while (arr_unordened[i] != arr[x])
-		x++;
-	return (x);
+	n = *p;
+	return(n);
 }
-/*
-t_list	*ft_lstnew_push(int *content, int *arr, int *arr_unordened, int argc, int i)
-{
-	t_list	*new;
-	int		x;
 
-	x = 0;
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	while (x < argc)
+void	ft_lstswap(t_list **s)
+{
+	t_list	*tmp;
+
+	if (*s && (*s)->next)
 	{
-		if (arr[x] == arr_unordened[i])
-			break;
-		x++;
+		tmp = (*s)->next;
+		(*s)->next = tmp->next;
+		tmp->next = *s;
+		*s = tmp;
 	}
-	new->content = malloc(sizeof(int) * 2);
-	new->content = (void*)p_void;
-
-	new->next = NULL;
-	return (new);
 }
-*/
+
 int main(int argc, char **argv)
 {
 	t_list *a;
 	t_list *b;
 	t_list *temp;
-	int aux[10000][3];
-	int arr[10000][3];
-	int arr_unordened[10000];
+	t_utils *u;
 
-	void (*f)();
+	int j;
+
+
+	int aux[10000];
 	int i;
-
 	i = 1 ;
-	if (ft_check_if_correct(argv, argc) == 1)
-	{
-		printf("%s\n Incorrect arguments %s\n", ANSI_COLOR_RED, ANSI_COLOR_RESET);
-		return (1);
-	}
-	i = 0;
-	while(i < argc)
-	{
-		arr_unordened[i] = arr[i] = ft_atoi(argv[i]);
-		i++;
-	}
-	ft_insertion_sort(arr, argc - 1);
-	if (ft_check_repeated_nbr(arr, argc - 1) == 1)
-	{
-		printf("%s\nRepeated numbers %s\n", ANSI_COLOR_RED, ANSI_COLOR_RESET);
-		return (1);
-	}
-	i = 1;
+	j = 0;
+
+
+	ft_lstadd_back(&a, NULL);
+	ft_lstadd_back(&b, NULL);
+
+	u = malloc(sizeof(t_utils));
+
 	while (i < argc)
-	{
-		aux[i][0] = ft_atoi(argv[i]);
-		aux[i][1] = ft_ordenation(arr, arr_unordened, i);
-	//	temp = ft_lstnew_push(aux[i], arr, arr_unordened, argc - 1, i);
-		ft_lstadd_back(&a, temp);
-		i++;
-	}
-	/*if (ft_ordenation(&a, &b, argc) == 1)
-		return (1);*/
-	return (0);
+		{
+			aux[j]= ft_atoi(argv[i]);
+			u->ordered[j] = aux[j];
+			temp = ft_lstnew(&aux[j]);
+			ft_lstadd_back(&a, temp);
+			i++;
+			j++;
+		}
+
+	insertionSort(u->ordered);
+
+//	print_list(a, b);
+
+	if (argc == 4)
+		ft_3numbers(&a, &b);
+	else if (argc <= 6)
+		ft_5numbers(&a, &b);
+	else
+		ft_push_swap_backtrack(&a, &b, u);
+
+//	print_list(a, b);
+	return 0;
+
+
 }
+

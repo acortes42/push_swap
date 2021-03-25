@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 20:26:34 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/11 15:38:35 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "../libft/libft.h"
 
-void ft_ss(t_list *a, t_list *b)
+
+void	ft_ss(t_list **a, t_list **b)
 {
 	ft_sa(a);
 	ft_sb(b);

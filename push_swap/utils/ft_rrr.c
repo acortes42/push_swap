@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 20:28:06 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/11 16:30:27 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "../libft/libft.h"
 
-void ft_rrr(t_list **a, t_list **b)
+
+void	ft_rrr(t_list **a, t_list **b)
 {
 	ft_rra(a);
 	ft_rrb(b);

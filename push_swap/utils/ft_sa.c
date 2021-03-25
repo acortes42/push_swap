@@ -3,21 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sa.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 20:26:08 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/11 15:43:57 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "../libft/libft.h"
 
-void ft_sa(t_list *t)
+
+void	ft_sa(t_list **a)
 {
-	t_list *temp;
+	if(a == NULL || *a == NULL || (*a)->next == NULL)
+ 		error_exit("No A stack to swap");
 
-	temp = t;
-	if (temp != NULL && temp->next != NULL)
-		ft_swap(temp->content, temp->next->content);
-}
+	ft_lstswap(a);
+	}

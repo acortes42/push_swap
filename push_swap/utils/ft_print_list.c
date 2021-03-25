@@ -3,27 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_list.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 15:05:16 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/11 17:12:20 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-#include "../libft/libft.h"
 
-int		ft_ptoint(int *p)
-{
-	int n;
-	n = *p;
-	return(n);
-}
 
 void	print_list(t_list *a, t_list *b)
 {
 
-    int		x;
 	char	out[100];
 	int		separator;
 
@@ -44,8 +36,21 @@ void	print_list(t_list *a, t_list *b)
 			printf("%d", ft_ptoint(b->content));
 			b = b->next;
 		}
-		printf("\n");
+	printf("\n");
     }
-    printf("END\n");
 }
 
+int		ft_check_sort(t_list *a, t_list *b)
+{
+	if (b || !a)
+		return (0);
+	if (!a->next)
+		return (1);
+	while (a->next)
+	{
+		if (*(int*)(a->content) > *(int*)(a->next->content))
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
