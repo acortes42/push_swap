@@ -22,8 +22,8 @@ CFLAGS_DEBUG	= ${CFLAGS} -g
 all: ${NAME}
 
 $(NAME): ${OBJS} ${OBJS2}
-	make -C libft all
-	${CC} -o ${NAME} ${CFLAGS} ${OBJS} ${OBJS2} ${LIBFT}
+	#make -C libft all
+	${CC} -g -o ${NAME} ${CFLAGS} ${LIBFT} ${OBJS} ${OBJS2}
 
 clean:
 	@rm -f  *.o
