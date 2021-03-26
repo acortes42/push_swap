@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_median.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 15:02:05 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/26 16:02:20 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
 
 int	ft_median(int *list)
 {
@@ -50,7 +49,6 @@ long	ft_average(t_list *a, int count)
 	result = x / (n - 1);
 	return (result);
 }
-
 
 int	ft_check_last(t_list **a, t_list *to_check, t_utils *utils)
 {

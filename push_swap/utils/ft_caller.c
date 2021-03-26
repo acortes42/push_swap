@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_caller.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:49:00 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 21:04:26 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/26 15:34:19 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	ft_caller(char *call, t_list **a, t_list **b, int i)
 	else if (call[0] == 'r' && call[1] == 'r' && call[2] == 'r' && i == 3)
 		ft_rrr(a, b);
 //	printf("Lo ha hecho en -> %d \n", ++x);
-//		print_list(*a,*b);
+		print_list(*a,*b);
 }

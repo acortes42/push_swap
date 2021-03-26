@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:36 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 17:16:06 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/26 14:50:25 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_GREEN   "\x1b[32m"
+# define ANSI_COLOR_YELLOW  "\x1b[33m"
+# define ANSI_COLOR_BLUE    "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN    "\x1b[36m"
+# define ANSI_COLOR_RESET   "\x1b[0m"
 
 #include "libft/libft.h"
 #include <stdio.h>

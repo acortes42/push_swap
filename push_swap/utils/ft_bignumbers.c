@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bignumbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 11:25:25 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 21:04:49 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/26 15:05:27 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void	ft_smart_rotate(t_list **a, t_list **b)
 
 void	ft_get_max_to_a(t_list **a, t_list **b, t_utils *u)
 {
+		printf(ANSI_COLOR_RED);
+
 	if (ft_get_max(*b, -1) == ft_get_int(*b))
 		ft_caller("pa", a, b, 2);
 	else
@@ -55,6 +57,6 @@ void	ft_get_max_to_a(t_list **a, t_list **b, t_utils *u)
 			ft_caller("ra", a, b, 2);
 		}
 		else
-			ft_smart_rotate(b, a);
+			ft_smart_rotate(a,b);
 	}
 }

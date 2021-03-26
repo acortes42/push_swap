@@ -6,7 +6,7 @@ UTILS			= utils/ft_sa.c utils/ft_sb.c utils/ft_ss.c utils/ft_pb.c utils/ft_ra.c 
 
 SRCS			= srcs/push_swap.c
 
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= 
 
 LIBFT = libft/libft.a
 

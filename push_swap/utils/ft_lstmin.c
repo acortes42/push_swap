@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmin.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:41:26 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 17:15:06 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/26 15:38:22 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,19 @@ t_list	*ft_lst_max(t_list *a, int *pos, int counter)
 int	ft_check_order(t_list *a, int *ordered)
 {
 	int i;
+	int size_a;
+
 
 	i = 0;
-	while(a)
+	size_a = ft_lstsize(a);
+	printf(ANSI_COLOR_CYAN);
+	printf("hERE DA cHECK\n");
+	while (ordered[i])
+		i++;
+	if (i != size_a)
+		return (0);
+	i = 0;
+	while(i < size_a)
 	{
 		if(ft_ptoint(a->content) != ordered[i])
 		{
@@ -83,15 +93,21 @@ int	ft_check_order(t_list *a, int *ordered)
 		else
 		{
 			a = a->next;
-			i++;
 		}
+		printf("%d\n", i);
+		i++;
+		
 	}
+	printf("hERE DA cHECK2\n");
 	return(1);
 }
 
 int	ft_get_int(t_list *a)
 {
 	int res;
-	res = ft_ptoint(a->content);
+
+	res = -2147483648;
+	if (a)
+		res = ft_ptoint(a->content);
 	return (res);
 }
