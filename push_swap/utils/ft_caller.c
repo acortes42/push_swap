@@ -6,23 +6,15 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:49:00 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/26 15:34:19 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/30 17:26:40 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-/*
-* RECORDAR METER LEN AL USAR LA FUNCION EN EL PARAMETRO 4 i
-*/
-
 void	ft_caller(char *call, t_list **a, t_list **b, int i)
 {
-//	static int x;
-
-	printf("%s \n",call);
-
+	printf("%s \n", call);
 	if (call[0] == 's' && call[1] == 'a' && i == 2)
 		ft_sa(a);
 	else if (call[0] == 's' && call[1] == 'b' && i == 2)
@@ -45,6 +37,15 @@ void	ft_caller(char *call, t_list **a, t_list **b, int i)
 		ft_rrb(b);
 	else if (call[0] == 'r' && call[1] == 'r' && call[2] == 'r' && i == 3)
 		ft_rrr(a, b);
-//	printf("Lo ha hecho en -> %d \n", ++x);
-		print_list(*a,*b);
+}
+
+int	ft_check_next(int a, t_utils *u)
+{
+	int	i;
+
+	i = 0;
+	while (u->ordered[i] != a)
+		i++;
+	i++;
+	return (u->ordered[i]);
 }

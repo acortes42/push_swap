@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/25 18:44:37 by adrian           ###   ########.fr       */
+/*   Updated: 2021/03/30 19:13:00 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	*insertionSort(int arr[])
 	n = 0;
 	while(arr[n] != 0)
 		n++;
-
 	i = 0;
 	j = 0;
 	while(i < n)
@@ -39,9 +38,9 @@ int	*insertionSort(int arr[])
 				arr[i] = arr[j];
 				arr[j] = tmp;
 			}
-		j++;
+			j++;
 		}
-	i++;
+		i++;
 	}
 	return(arr);
 }
@@ -73,35 +72,25 @@ int main(int argc, char **argv)
 	t_list *b;
 	t_list *temp;
 	t_utils *u;
-
 	int j;
-
-
 	int aux[10000];
 	int i;
+
 	i = 1 ;
 	j = 0;
-
-
 	ft_lstadd_back(&a, NULL);
 	ft_lstadd_back(&b, NULL);
-
 	u = malloc(sizeof(t_utils));
-
 	while (i < argc)
-		{
-			aux[j]= ft_atoi(argv[i]);
-			u->ordered[j] = aux[j];
-			temp = ft_lstnew(&aux[j]);
-			ft_lstadd_back(&a, temp);
-			i++;
-			j++;
-		}
-
+	{
+		aux[j]= ft_atoi(argv[i]);
+		u->ordered[j] = aux[j];
+		temp = ft_lstnew(&aux[j]);
+		ft_lstadd_back(&a, temp);
+		i++;
+		j++;
+	}
 	insertionSort(u->ordered);
-
-//	print_list(a, b);
-
 	if (argc == 4)
 		ft_3numbers(&a, &b);
 	else if (argc <= 6)
@@ -109,9 +98,7 @@ int main(int argc, char **argv)
 	else
 		ft_push_swap_backtrack(&a, &b, u);
 
-//	print_list(a, b);
+	print_list(a, b);
 	return 0;
-
-
+//	print_list(a, b);
 }
-

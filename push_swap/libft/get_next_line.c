@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/21 12:05:51 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/08 19:43:40 by jruiz-ro         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:03:52 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ int	read_line(char **s, int fd, char **line)
 	char			*tmp;
 	int				result;
 
-	while ((result = read(fd, buff, BUFFER_SIZE)) > 0)
+	result = read(fd, buff, BUFFER_SIZE);
+	while (result > 0)
 	{
 		buff[result] = '\0';
 		if (!s[fd])

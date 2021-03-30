@@ -6,18 +6,17 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:41:26 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/26 15:38:22 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:02:37 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
 t_list	*ft_lst_min(t_list *a, int *pos, int counter)
 {
 	int		i;
 	t_list	*tmp;
-	int n;
+	int		n;
 
 	n = 0;
 	i = __INT_MAX__;
@@ -45,7 +44,7 @@ t_list	*ft_lst_max(t_list *a, int *pos, int counter)
 {
 	int		i;
 	t_list	*tmp;
-	int n;
+	int		n;
 
 	i = -2147483648;
 	n = 0;
@@ -71,43 +70,54 @@ t_list	*ft_lst_max(t_list *a, int *pos, int counter)
 
 int	ft_check_order(t_list *a, int *ordered)
 {
-	int i;
-	int size_a;
-
+	int		i;
+	int		size_a;
 
 	i = 0;
 	size_a = ft_lstsize(a);
-	printf(ANSI_COLOR_CYAN);
-	printf("hERE DA cHECK\n");
 	while (ordered[i])
 		i++;
 	if (i != size_a)
 		return (0);
 	i = 0;
-	while(i < size_a)
+	while (a)
 	{
-		if(ft_ptoint(a->content) != ordered[i])
-		{
-			return(0);
-		}
+		if (ft_ptoint(a->content) != ordered[i])
+			return (0);
 		else
 		{
 			a = a->next;
+			i++;
 		}
-		printf("%d\n", i);
-		i++;
-		
 	}
-	printf("hERE DA cHECK2\n");
-	return(1);
+	return (1);
 }
 
 int	ft_get_int(t_list *a)
 {
-	int res;
+	int	res;
 
-	res = -2147483648;
-	if (a)
-		res = ft_ptoint(a->content);
+	res = 0;
+	if (!a)
+		error_exit("No values to get int from");
+	res = ft_ptoint(a->content);
 	return (res);
+}
+
+int	ft_is_sorted(t_list *v)
+{
+	int	i;
+
+	if (!v)
+		return (-1);
+	i = ft_lstsize(v);
+	if (i == 0)
+		return (1);
+	while (v)
+	{
+		if (ft_get_int(v) > ft_get_int(v->next))
+			return (0);
+		v = v->next;
+	}
+	return (1);
 }
