@@ -22,6 +22,7 @@ typedef struct		s_struct
 	char    **parseString;
 	int		len_parse;
 	int		*all_int;
+	int		*all_ord_int;
 }                   s_struct; 
 
 // UTILS
@@ -30,11 +31,11 @@ void		ft_putstr(char *s);
 char		**ft_split(char const *s, char c);
 void		*ft_memset(void *b, int c, size_t len);
 int			ft_check_if_all_correct(s_struct *s_alpha, char **argv, int argc);
-long int	ft_atoi(const char *j);
 int			ft_count_words(char **arr);
 void		ft_putnbr(int n);
 size_t		ft_strlen(const char *s);
 char		*ft_trim(char *str);
 int			ft_isinteger(char *str);
+void		insertionSort(int arr[], int n);
 
 #endif

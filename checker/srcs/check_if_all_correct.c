@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:25:09 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 20:12:08 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 14:08:13 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,16 @@ int ft_check_if_all_correct(s_struct *s_alpha, char **argv, int argc)
 		count++;
 	}
 	s_alpha->all_int = malloc(sizeof(int) * (argc - 1));
+	s_alpha->all_ord_int = malloc(sizeof(int) * (argc - 1));
 	count = 1;
 	i = 0;
 	while(count < argc)
 	{
 		s_alpha->all_int[i] = ft_atoi(argv[count]);
+		s_alpha->all_ord_int[i] = ft_atoi(argv[count]);
 		i++;
 		count++;
 	}
-	insertionSort(s_alpha->all_int, argc - 1);
+	insertionSort(s_alpha->all_ord_int, argc - 1);
 	return (0);
 }

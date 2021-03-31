@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:20:00 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 15:37:26 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 15:52:43 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_split_to_b(t_list **a, t_list **b, int avg, int size)
 	i = 0;
 	while (i < size)
 	{
-		if (a)
+		if (a != NULL)
 		{
 			if (avg > ft_get_int(*a))
 				ft_caller("pb", a, b, 2);

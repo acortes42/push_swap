@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 11:41:26 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/30 16:02:37 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 15:55:05 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,14 +73,9 @@ int	ft_check_order(t_list *a, int *ordered)
 	int		i;
 	int		size_a;
 
-	i = 0;
 	size_a = ft_lstsize(a);
-	while (ordered[i])
-		i++;
-	if (i != size_a)
-		return (0);
 	i = 0;
-	while (a)
+	while (a != NULL)
 	{
 		if (ft_ptoint(a->content) != ordered[i])
 			return (0);
@@ -113,7 +108,7 @@ int	ft_is_sorted(t_list *v)
 	i = ft_lstsize(v);
 	if (i == 0)
 		return (1);
-	while (v)
+	while (v != NULL)
 	{
 		if (ft_get_int(v) > ft_get_int(v->next))
 			return (0);

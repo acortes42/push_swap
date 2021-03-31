@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:36 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/30 19:07:02 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 16:38:29 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void		ft_caller(char *call, t_list **a, t_list **b, int i);
 void		ft_caller2(char *call, t_list **a, t_list **b, int i);
 void		ft_caller3(char *call, t_list **a, t_list **b, int i);
 void		ft_caller4(char *call, t_list **a, t_list **b, int i);
-int			*insertionSort(int arr[]);
+int			*insertionSort(int arr[], int argc);
 int			ft_check_order(t_list *a, int *ordered);
 
 int			ft_median(int *list);

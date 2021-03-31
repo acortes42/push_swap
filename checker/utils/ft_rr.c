@@ -1,38 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_rr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 12:49:12 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/31 15:46:57 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/10 20:27:16 by acortes-          #+#    #+#             */
+/*   Updated: 2021/03/30 15:32:53 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-int	ft_atoi(const char *str)
+void	ft_rr(t_list **a, t_list **b)
 {
-	long int	i;
-	long int	k;
-	long int	r;
-
-	i = 0;
-	k = 1;
-	r = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == 45 || str[i] == 43)
-	{
-		if (str[i] == 45)
-			k = -k;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		r = ((r * 10) + (str[i] - '0') * k);
-		i++;
-	}
-	return ((int)r);
+	ft_ra(a);
+	ft_rb(b);
 }

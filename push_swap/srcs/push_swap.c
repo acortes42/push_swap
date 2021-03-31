@@ -6,14 +6,13 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/30 19:34:33 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 16:43:44 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-int	*insertionSort(int arr[])
+int	*insertionSort(int arr[], int argc)
 {
 	int	n;
 	int	i;
@@ -23,7 +22,7 @@ int	*insertionSort(int arr[])
 	if (!arr)
 		return(0);
 	n = 0;
-	while(arr[n] != 0)
+	while(n < argc)
 		n++;
 	i = 0;
 	j = 0;
@@ -57,7 +56,7 @@ void	ft_lstswap(t_list **s)
 {
 	t_list	*tmp;
 
-	if (*s && (*s)->next)
+	if (*s != NULL && (*s)->next != NULL)
 	{
 		tmp = (*s)->next;
 		(*s)->next = tmp->next;
@@ -95,14 +94,17 @@ int main(int argc, char **argv)
 		i++;
 		j++;
 	}
-	insertionSort(u->ordered);
+	insertionSort(u->ordered, argc - 1);
+	i = 0;
+	while (i < argc - 1)
+		printf("%d\n", u->ordered[i++]);
 	if (argc == 4)
 		ft_3numbers(&a, &b);
-	else if (argc <= 6)
+	else if (argc < 100)
 		ft_5numbers(&a, &b);
 	else
 		ft_push_swap_backtrack(&a, &b, u);
-
+	
 	print_list(a, b);
 	return 0;
 //	print_list(a, b);

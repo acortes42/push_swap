@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 17:36:23 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 17:41:15 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 15:54:53 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_3numbers(t_list **a, t_list **b)
 	while (i < 3)
 	{
 		aux[i] = ft_ptoint(list->content);
-		if (list && list->next)
+		if (list != NULL && list->next != NULL)
 			list = list->next;
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 15:23:24 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 17:41:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/31 15:56:36 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_5numbers(t_list **a, t_list **b)
 
 	arr[2] = 0;
 	arr[1] = ft_lstsize(*a);
-	while (*a && arr[1] != 3)
+	while (*a != NULL && arr[1] != 3)
 	{
 		min = ft_lst_min(*a, &arr[0], arr[1]);
 		while (*a != min && (*a)->content != (min)->content)
