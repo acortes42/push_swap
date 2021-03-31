@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/30 19:13:00 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:34:33 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,11 @@ int main(int argc, char **argv)
 
 	i = 1 ;
 	j = 0;
+	if (ft_check_if_correct(argv, argc) == 1 || ft_check_if_repeated(argv, argc) == 1)
+	{
+		printf("Error en los argumentos\n");
+		return (1);
+	}
 	ft_lstadd_back(&a, NULL);
 	ft_lstadd_back(&b, NULL);
 	u = malloc(sizeof(t_utils));

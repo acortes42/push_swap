@@ -3,21 +3,10 @@
 
 // List of includes 
 
-# include <sys/wait.h>   
-# include <sys/types.h>
-# include <sys/stat.h>
+# include "libft/libft.h"
 # include <stdio.h>
-# include <string.h>
-# include <fcntl.h>
-# include <stddef.h>
 # include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <ctype.h>
-# include <stdarg.h>
-# include <errno.h>
-# include <signal.h>
-# include <limits.h>
+# include <math.h>
 
 # define ANSI_COLOR_RED     "\x1b[31m"
 # define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -31,13 +20,9 @@ typedef struct		s_struct
 {
 	char	string[2048];
 	char    **parseString;
+	int		len_parse;
 	int		*all_int;
 }                   s_struct; 
-
-
-
-
-
 
 // UTILS
 
@@ -51,6 +36,5 @@ void		ft_putnbr(int n);
 size_t		ft_strlen(const char *s);
 char		*ft_trim(char *str);
 int			ft_isinteger(char *str);
-
 
 #endif

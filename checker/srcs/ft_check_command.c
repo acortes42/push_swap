@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_if_repeted.c                              :+:      :+:    :+:   */
+/*   ft_check_command.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 19:56:10 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 19:39:45 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/30 20:14:48 by acortes-          #+#    #+#             */
+/*   Updated: 2021/03/30 20:57:40 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
-int	ft_check_if_repeated(char **argv, int argc)
+int	ft_test_commmands(s_struct *s_alpha)
 {
-	int	i;
-	int	n;
+	t_list	*a;
+	t_list	*b;
+	t_list	*tmp;
+	int		x;
 
-	i = 0;
-	n = 1;
-	while (i < argc - 1)
+	x = 0;
+	ft_lstadd_back(&a, NULL);
+	ft_lstadd_back(&b, NULL);
+	while (s_alpha->parse_string[x])
 	{
-		while (n < argc)
-		{
-			/*
-			if (ft_memcmp(argv[n], "0", ft_strlen(argv[n])) == 0)
-			{
-				n++;
-				continue;
-			}*/
-			if (ft_special_atoi(argv[i]) == ft_special_atoi(argv[n]))
-				return (1);
-			n++;
-		}
+		tmp = ft_lstnew(&aux[j]);
+		ft_lstadd_back(&a, tmp);
 		i++;
-		n = i + 1;
-	}
-	return (0);
+		j++
 }

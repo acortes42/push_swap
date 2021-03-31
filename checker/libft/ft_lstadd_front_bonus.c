@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_if_repeted.c                              :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 19:56:10 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 19:39:45 by acortes-         ###   ########.fr       */
+/*   Created: 2019/11/19 11:54:54 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/03/10 20:20:03 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-int	ft_check_if_repeated(char **argv, int argc)
+void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	int	i;
-	int	n;
-
-	i = 0;
-	n = 1;
-	while (i < argc - 1)
-	{
-		while (n < argc)
-		{
-			/*
-			if (ft_memcmp(argv[n], "0", ft_strlen(argv[n])) == 0)
-			{
-				n++;
-				continue;
-			}*/
-			if (ft_special_atoi(argv[i]) == ft_special_atoi(argv[n]))
-				return (1);
-			n++;
-		}
-		i++;
-		n = i + 1;
-	}
-	return (0);
+	new->next = *alst;
+	*alst = new;
 }

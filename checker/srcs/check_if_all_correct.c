@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_if_all_correct.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:25:09 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/10 21:06:46 by jruiz-ro         ###   ########.fr       */
+/*   Updated: 2021/03/30 20:12:08 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,6 @@ int ft_check_if_all_correct(s_struct *s_alpha, char **argv, int argc)
 			return (1);
 		count++;
 	}
-	// Aqui necesito la interpretación de comandos del push_swap leyendo s_alpha_parseString.
-
-	// Y luego de eso necesito una comparativa con una array ordenada correctamente.
 	s_alpha->all_int = malloc(sizeof(int) * (argc - 1));
 	count = 1;
 	i = 0;
@@ -65,22 +62,6 @@ int ft_check_if_all_correct(s_struct *s_alpha, char **argv, int argc)
 		i++;
 		count++;
 	}
-	// Crear una funcion de ordenación para s_alpha->all_int
 	insertionSort(s_alpha->all_int, argc - 1);
-
-	// lo siguiente es test
-	count = 1;
-	i = 0;
-	while (count < argc)
-	{
-		ft_putstr(ANSI_COLOR_CYAN);
-		ft_putnbr(s_alpha->all_int[i]);
-		ft_putstr("\n");
-		i++;
-		count++;
-	}
-	ft_putstr(ANSI_COLOR_RESET);
-
-	//hasta aqui
 	return (0);
 }

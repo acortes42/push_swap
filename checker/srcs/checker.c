@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 17:04:55 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/09 21:10:20 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/03/30 20:14:25 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ int main(int argc, char **argv)
 
 	ft_memset(&s_alpha, 0, sizeof(s_struct));
 	ft_init_struct(&s_alpha);
-	check_result = ft_check_if_all_correct(&s_alpha, argv, argc);
+	ft_check_if_all_correct(&s_alpha, argv, argc);
+	check_result = ft_test_commmands(&s_alpha);
 	ft_print_checker(check_result);
 	return (1);
 }
