@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/31 17:53:59 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/04/02 15:15:35 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/31 17:53:59 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 // List of includes
 
-# include "../push_swap/push_swap.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>

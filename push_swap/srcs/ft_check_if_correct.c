@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/31 15:46:35 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/02 18:22:49 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	ft_check_if_correct(char **argv, int argc)
 		if (ft_memcmp(argv[count], "0", ft_strlen(argv[count])) == 0)
 		{
 			count++;
-			continue;
+			continue ;
 		}
 		if (ft_special_atoi(argv[count]) == -2847483648)
 			return (1);

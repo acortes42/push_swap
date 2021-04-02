@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 15:05:16 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/31 15:55:58 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	print_list(t_list *a, t_list *b)
 
 int	ft_check_sort(t_list *a, t_list *b)
 {
-	if (b == NULL|| a == NULL)
+	if (b == NULL || a == NULL)
 		return (0);
 	if (a->next == NULL)
 		return (1);

@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_lstswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Created: 2021/04/01 17:48:06 by acortes-          #+#    #+#             */
 /*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_lstswap(t_list **s)
 {
-	int		i;
-	int		j;
-	char	*str;
+	t_list	*tmp;
 
-	if (!(s))
-		return (0);
-	i = ft_strlen(s);
-	j = 0;
-	str = malloc((i + 1) * sizeof(char));
-	if (!(str))
-		return (0);
-	while (j < i)
+	if (*s != NULL && (*s)->next != NULL)
 	{
-		str[j] = f(j, s[j]);
-		j++;
+		tmp = (*s)->next;
+		(*s)->next = tmp->next;
+		tmp->next = *s;
+		*s = tmp;
 	}
-	str[i] = '\0';
-	return (str);
 }

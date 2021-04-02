@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/08 15:58:36 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/31 16:38:29 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_utils
 
 // SRCS
 
+int			ft_check_if_flag(char *arg);
 void		ft_swap(int *a, int *b);
 int			ft_check_if_correct(char **argv, int argc);
 int			ft_check_if_repeated(char **argv, int argc);
@@ -41,6 +42,7 @@ long int	ft_special_atoi(const char *j);
 
 // OBJS
 
+int			ft_flag_asignation(char *arg);
 void		ft_pa(t_list **a, t_list **b);
 void		ft_pb(t_list **a, t_list **b);
 void		ft_ra(t_list **a);
@@ -68,7 +70,7 @@ void		ft_caller(char *call, t_list **a, t_list **b, int i);
 void		ft_caller2(char *call, t_list **a, t_list **b, int i);
 void		ft_caller3(char *call, t_list **a, t_list **b, int i);
 void		ft_caller4(char *call, t_list **a, t_list **b, int i);
-int			*insertionSort(int arr[], int argc);
+int			*ft_insertion_sort(int arr[], int argc);
 int			ft_check_order(t_list *a, int *ordered);
 
 int			ft_median(int *list);
@@ -78,10 +80,6 @@ void		ft_3numbers(t_list **a, t_list **b);
 void		ft_5numbers(t_list **a, t_list **b);
 void		ft_bignumbers(t_list **a, t_list **b, int *ordered);
 void		ft_5numbers_beta(t_list **a, t_list **b);
-
-/*
-*	COSITAS NUEVAS
-*/
 
 int			ft_get_max(t_list *a, int limit);
 int			ft_get_min(t_list *a, int limit);
@@ -100,4 +98,6 @@ void		ft_push_swap(t_list **a, t_list **b, t_utils *u);
 int			ft_is_sorted(t_list *v);
 
 int			ft_check_next(int a, t_utils *u);
+void		ft_free_list(t_list *head);
+void		ft_lstswap(t_list **s);
 #endif

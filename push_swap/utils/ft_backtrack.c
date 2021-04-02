@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/23 12:39:16 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/31 16:36:44 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_backtrack(t_list **a, t_list **b, t_utils *u, int limit)
 				ft_caller("pb", a, b, 2);
 		}
 	}
-	printf(ANSI_COLOR_YELLOW);
 	if (b != NULL && a != NULL)
 		if (ft_get_min(*b, -1) == ft_check_next(ft_get_int(ft_lstlast(*a)), u))
 			ft_push_swap(a, b, u);

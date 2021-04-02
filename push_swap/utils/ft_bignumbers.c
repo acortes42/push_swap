@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 17:19:13 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/31 16:08:07 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,10 @@ void	ft_push_swap(t_list **a, t_list **b, t_utils *u)
 	if (ft_lstsize(*b) == 0)
 		return ;
 	max = ft_get_max(*b, -1);
-	printf(ANSI_COLOR_GREEN);
 	ft_split_to_a(a, b, u, ft_average(*b, -1));
-	printf(ANSI_COLOR_RED);
 	while (ft_check_last(a, *a, u) && !ft_check_order(*a, u->ordered))
 		ft_caller("ra", a, b, 2);
-	printf(ANSI_COLOR_BLUE);
 	ft_push_swap(a, b, u);
-	printf(ANSI_COLOR_MAGENTA);
 	if (ft_get_size(*a, u, max) >= 20)
 		ft_backtrack_split(a, b, u, max);
 	ft_backtrack(a, b, u, max);

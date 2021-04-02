@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 17:48:15 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/04/02 15:15:10 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_check_if_all_correct(t_struct *s_alpha, char **argv, int argc)
 	if (ft_check_if_correct(argv, argc) == 1 \
 		 || ft_check_if_repeated(argv, argc) == 1)
 	{
-		printf(ANSI_COLOR_RED"Error en los argumentos\n");
+		printf("Error en los argumentos\n");
 		return (1);
 	}
 	s_alpha->all_int = malloc(sizeof(int) * (argc - 1));
