@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 15:58:41 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/31 16:43:44 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/02 14:27:14 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
 	j = 0;
 	if (ft_check_if_correct(argv, argc) == 1 || ft_check_if_repeated(argv, argc) == 1)
 	{
-		printf("Error en los argumentos\n");
+		printf(ANSI_COLOR_RED"Error en los argumentos\n");
 		return (1);
 	}
 	ft_lstadd_back(&a, NULL);
@@ -95,17 +95,11 @@ int main(int argc, char **argv)
 		j++;
 	}
 	insertionSort(u->ordered, argc - 1);
-	i = 0;
-	while (i < argc - 1)
-		printf("%d\n", u->ordered[i++]);
 	if (argc == 4)
 		ft_3numbers(&a, &b);
 	else if (argc < 100)
 		ft_5numbers(&a, &b);
 	else
 		ft_push_swap_backtrack(&a, &b, u);
-	
-	print_list(a, b);
 	return 0;
-//	print_list(a, b);
 }

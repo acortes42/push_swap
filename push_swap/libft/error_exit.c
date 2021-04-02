@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_exit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/24 11:32:27 by jruiz-ro          #+#    #+#             */
-/*   Updated: 2021/03/14 10:14:39 by jruiz-ro         ###   ########.fr       */
+/*   Updated: 2021/04/02 15:20:07 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	error_exit(char *s)
 {
-	ft_putstr_fd("Error:\n", 1);
-	ft_putstr_fd(s, 1);
-	ft_putstr_fd("\n", 1);
+	printf(ANSI_COLOR_RED "Error:\n%s\n"ANSI_COLOR_RESET, s);
 	exit(EXIT_FAILURE);
 }

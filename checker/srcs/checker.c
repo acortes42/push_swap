@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 17:04:55 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/31 14:09:42 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/04/02 15:15:10 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void ft_print_checker(int x)
+void	ft_print_checker(int x)
 {
 	ft_putstr(ANSI_COLOR_RED);
 	if (x == 1)
@@ -25,9 +25,9 @@ void ft_print_checker(int x)
 	ft_putstr(ANSI_COLOR_RESET);
 }
 
-void ft_init_struct(s_struct *s_alpha)
+void	ft_init_struct(t_struct *s_alpha)
 {
-	int c;
+	int	c;
 	int	i;
 
 	i = 0;
@@ -35,29 +35,66 @@ void ft_init_struct(s_struct *s_alpha)
 	{
 		s_alpha->string[i] = c;
 		i++;
-		if (c == '0' || c == '\n')
-			break;
+		if (c == '0')
+			break ;
 	}
-	s_alpha->parseString = ft_split(s_alpha->string, ' ');
+	s_alpha->parseString = ft_split(s_alpha->string, '\n');
 	return ;
 }
 
-int main(int argc, char **argv)
+int	ft_ptoint(int *p)
 {
-	s_struct	s_alpha;
-	int			check_result;
+	int	n;
 
+	n = *p;
+	return (n);
+}
 
-	ft_memset(&s_alpha, 0, sizeof(s_struct));
+void	print_list(t_list *a, t_list *b)
+{
+	char	out[100];
+	int		separator;
+
+	separator = 50;
+	ft_memset(out, '-', separator);
+	out[separator] = 0;
+	printf("%s\n", out);
+	while (a != NULL || b != NULL)
+	{
+		if (a != NULL)
+		{
+			printf("%d", ft_ptoint(a->content));
+			a = a->next;
+		}
+		printf("\t\t\t\t\t");
+		if (b != NULL)
+		{
+			printf("%d", ft_ptoint(b->content));
+			b = b->next;
+		}
+		printf("\n");
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	t_list		*a;
+	t_list		*b;
+	t_struct	s_alpha;
+	int			i;
+
+	i = 0;
+	ft_memset(&s_alpha, 0, sizeof(t_struct));
+	ft_lstadd_back(&a, NULL);
+	ft_lstadd_back(&b, NULL);
+	ft_work_with_list(&a, argc, argv);
 	ft_init_struct(&s_alpha);
-	/*
-	ft_check_if_all_correct(&s_alpha, argv, argc);
-	printf("all_int es: %d\n",s_alpha.all_int[0]);
-	printf("all_ord_int es: %d\n",s_alpha.all_ord_int[0]);
-	printf("parse es: %s\n",s_alpha.parseString[0]);
-	printf("string es: %s\n",s_alpha.string);
-	*/
-	check_result = ft_test_commmands(&s_alpha);
-	ft_print_checker(check_result);
-	return (1);
+	if (ft_check_if_all_correct(&s_alpha, argv, argc) == 1)
+		return (1);
+	i = -1;
+	while (s_alpha.parseString[++i])
+		ft_caller(ft_trim(s_alpha.parseString[i]), &a, &b, \
+		 ft_strlen(ft_trim(s_alpha.parseString[i])));
+	ft_ok_or_ko(argc, a, b, s_alpha);
+	return (0);
 }

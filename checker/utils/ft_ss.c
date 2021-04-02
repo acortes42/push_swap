@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ss.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 20:26:34 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 15:25:14 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/04/01 17:46:30 by jruiz-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 void	ft_ss(t_list **a, t_list **b)
 {

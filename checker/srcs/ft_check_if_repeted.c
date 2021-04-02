@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_command.c                                 :+:      :+:    :+:   */
+/*   ft_check_if_repeted.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/30 20:14:48 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/31 14:21:16 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/29 19:56:10 by acortes-          #+#    #+#             */
+/*   Updated: 2021/04/02 14:48:50 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-int	ft_inverse_push(s_struct *s_alpha, t_list ** a, t_list **b)
+int	ft_check_if_repeated(char **argv, int argc)
 {
+	int	i;
+	int	n;
 
-}
-int	ft_test_commmands(s_struct *s_alpha)
-{
-	t_list	*a;
-	t_list	*b;
-	t_list	*tmp;
-	int		x;
-	int		aux[10000];
-
-	x = 0;
-	ft_lstadd_back(&a, NULL);
-	ft_lstadd_back(&b, NULL);
-	while (s_alpha->parseString[x])
+	i = 0;
+	n = 1;
+	while (i < argc - 1)
 	{
-		aux[x]= ft_atoi(s_alpha->parseString[x]);
-		tmp = ft_lstnew(&aux[x]);
-		ft_lstadd_back(&a, tmp);
-		x++;
+		while (n < argc)
+		{
+			if (ft_memcmp(argv[n], "0", ft_strlen(argv[n])) == 0)
+			{
+				n++;
+				continue ;
+			}
+			if (ft_special_atoi(argv[i]) == ft_special_atoi(argv[n]))
+				return (1);
+			n++;
+		}
+		i++;
+		n = i + 1;
 	}
-	ft_inverse_push(s_alpha, &a, &b);
+	return (0);
 }

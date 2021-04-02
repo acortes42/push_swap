@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jruiz-ro <jruiz-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 20:28:06 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 15:31:27 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/04/01 17:46:34 by jruiz-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 void	ft_rrr(t_list **a, t_list **b)
 {

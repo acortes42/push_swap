@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/10 20:26:54 by acortes-          #+#    #+#             */
-/*   Updated: 2021/03/30 15:46:09 by acortes-         ###   ########.fr       */
+/*   Created: 2021/03/11 17:48:15 by jruiz-ro          #+#    #+#             */
+/*   Updated: 2021/04/02 14:28:49 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker.h"
 
 void	ft_pa(t_list **a, t_list **b)
 {
@@ -18,7 +18,7 @@ void	ft_pa(t_list **a, t_list **b)
 	t_list	*p;
 
 	if (b == NULL || *b == NULL)
-		error_exit("No B stack to push into A");
+		error_exit(ANSI_COLOR_RED"No B stack to push into A");
 	p = *b;
 	temp = ft_lstnew(p->content);
 	ft_lstadd_front(a, temp);

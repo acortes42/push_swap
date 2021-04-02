@@ -6,7 +6,7 @@ UTILS			= utils/ft_sa.c utils/ft_sb.c utils/ft_ss.c utils/ft_pb.c utils/ft_ra.c 
 
 SRCS			= srcs/push_swap.c srcs/ft_check_if_correct.c srcs/ft_check_if_repeted.c
 
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -fsanitize=address 
 
 LIBFT = libft/libft.a
 
@@ -23,7 +23,7 @@ all: ${NAME}
 
 $(NAME): ${OBJS} ${OBJS2}
 	make -C libft all
-	${CC} -g -o ${NAME} ${CFLAGS} ${LIBFT} ${OBJS} ${OBJS2}
+	${CC} -o ${NAME} ${CFLAGS} ${LIBFT} ${OBJS} ${OBJS2}
 
 clean:
 	@rm -f  *.o
