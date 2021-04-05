@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:21:40 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,6 @@ void	ft_init_struct(t_struct *s_alpha)
 	}
 	s_alpha->parseString = ft_split(s_alpha->string, '\n');
 	return ;
-}
-
-int	ft_ptoint(int *p)
-{
-	int	n;
-
-	n = *p;
-	return (n);
 }
 
 void	print_list(t_list *a, t_list *b)
@@ -93,8 +85,8 @@ int	main(int argc, char **argv)
 		return (1);
 	i = -1;
 	while (s_alpha.parseString[++i])
-		ft_caller(ft_trim(s_alpha.parseString[i]), &a, &b, \
-		 ft_strlen(ft_trim(s_alpha.parseString[i])));
+		ft_caller(s_alpha.parseString[i], &a, &b, \
+			ft_strlen(s_alpha.parseString[i]));
 	ft_ok_or_ko(argc, a, b, s_alpha);
 	return (0);
 }

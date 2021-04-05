@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:53:59 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 13:52:49 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,22 @@ int			ft_test_commmands(t_struct *s_alpha);
 void		delete_first_node(t_list **head);
 void		delete_last_node(t_list **head);
 void		ft_lstswap(t_list **s);
-
+int			ft_ptoint(int *p);
+void		print_list(t_list *a, t_list *b);
 void		ft_caller(char *call, t_list **a, t_list **b, int i);
+long int	ft_special_atoi(const char *j);
+
+void		ft_pa(t_list **a, t_list **b);
+void		ft_pb(t_list **a, t_list **b);
+void		ft_ra(t_list **a);
+void		ft_rb(t_list **b);
+void		ft_rr(t_list **a, t_list **b);
+void		ft_rra(t_list **a);
+void		ft_rrb(t_list **b);
+void		ft_rrr(t_list **a, t_list **b);
+void		ft_sa(t_list **t);
+void		ft_sb(t_list **t);
+void		ft_ss(t_list **a, t_list **b);
 
 int			ft_get_int(t_list *a);
 #endif

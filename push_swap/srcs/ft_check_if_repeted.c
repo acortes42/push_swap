@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:17:53 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,23 @@ int	ft_check_if_repeated(char **argv, int argc)
 		i++;
 		n = i + 1;
 	}
+	return (0);
+}
+
+int	ft_if_ordered(int *aux, t_utils *u, int argc)
+{
+	int	i;
+
+	i = -1;
+	while (++i < argc - 1)
+	{
+		if (u->ordered[i] == aux[i])
+			continue ;
+		else
+			break ;
+	}
+	if (i == argc - 1)
+		return (1);
 	return (0);
 }
 

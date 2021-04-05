@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 14:15:21 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void		ft_swap(int *a, int *b);
 int			ft_check_if_correct(char **argv, int argc);
 int			ft_check_if_repeated(char **argv, int argc);
 long int	ft_special_atoi(const char *j);
+int			ft_if_ordered(int *aux, t_utils *u, int argc);
 
 // OBJS
 
