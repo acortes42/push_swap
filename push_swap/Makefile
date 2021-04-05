@@ -40,7 +40,7 @@ fclean: clean
 	@rm -f ${NAME}
 	@rm -f *.a
 	@rm -f a.out
-#	make -C libft fclean
+	make -C libft fclean
 
 debug:	${OBJS}
 	make -C libft all

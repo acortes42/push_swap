@@ -6,11 +6,37 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 14:17:53 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:11:34 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_5_or_less(int argc, t_list **a, t_list **b)
+{
+	if (argc <= 4)
+		ft_3numbers(a, b);
+	else
+		ft_5numbers(a, b);
+}
+
+int	ft_read_zero(char **argv, int argc)
+{
+	int	i;
+	int	flag;
+
+	i = 0;
+	flag = 0;
+	while (i < argc)
+	{
+		if (ft_memcmp(argv[i], "0", ft_strlen(argv[i])) == 0)
+			flag++;
+		i++;
+	}
+	if (flag > 1)
+		error_exit("Doble zero");
+	return (0);
+}
 
 int	ft_check_if_repeated(char **argv, int argc)
 {
@@ -35,7 +61,7 @@ int	ft_check_if_repeated(char **argv, int argc)
 		i++;
 		n = i + 1;
 	}
-	return (0);
+	return (ft_read_zero(argv, argc));
 }
 
 int	ft_if_ordered(int *aux, t_utils *u, int argc)

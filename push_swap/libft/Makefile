@@ -6,7 +6,7 @@
 #    By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#              #
-#    Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr        #
+#    Updated: 2021/04/05 19:17:27 by acortes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS	= ft_isalpha.c ft_litoa.c ft_lstclear_bonus.c ft_lstsize_bonus.c ft_memmove
 
 OBJS	= ${SRCS:.c=.o}
 
-CC		= gcc -Wall -Wextra -Werror
+CC		= gcc -Wall -Wextra -Werror -fsanitize=address
 
 NAME	= libft.a
 

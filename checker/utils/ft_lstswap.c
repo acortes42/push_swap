@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 17:48:06 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:49:12 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	delete_last_node(t_list **head)
 	currNode = *head;
 	if ((*head) == NULL)
 		return ;
-	if ((*head)->next == NULL)
+	if ((*head)->next == NULL && *head)
 	{
 		free(head);
 		head = NULL;
@@ -40,7 +40,8 @@ void	delete_last_node(t_list **head)
 	}
 	while (currNode->next && currNode->next->next != NULL)
 		currNode = currNode->next;
-	free(currNode->next);
+	if (currNode->next)
+		free(currNode->next);
 	currNode->next = NULL;
 }
 
@@ -52,7 +53,8 @@ void	delete_first_node(t_list **head)
 		return ;
 	tmp = *head;
 	*head = (*head)->next;
-	free(tmp);
+	if (tmp)
+		free(tmp);
 }
 
 void	ft_caller(char *call, t_list **a, t_list **b, int i)

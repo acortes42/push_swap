@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:53:59 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 13:52:49 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 17:03:41 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ typedef struct s_struct
 
 // UTILS
 
-void		ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct s_alpha);
+void		ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct *s_alpha);
 void		ft_init_struct(t_struct *s_alpha);
 int			ft_check_if_repeated(char **argv, int argc);
 int			ft_check_if_correct(char **argv, int argc);
 void		ft_work_with_list (t_list **a, int argc, char **argv);
 void		ft_putstr(char *s);
+void		ft_free_alpha(t_struct *s_alpha);
 char		**ft_split(char const *s, char c);
 void		*ft_memset(void *b, int c, size_t len);
 int			ft_check_if_all_correct(t_struct *s_alpha, char **argv, int argc);
@@ -62,6 +63,7 @@ int			ft_ptoint(int *p);
 void		print_list(t_list *a, t_list *b);
 void		ft_caller(char *call, t_list **a, t_list **b, int i);
 long int	ft_special_atoi(const char *j);
+int			ft_free_list(t_list *head);
 
 void		ft_pa(t_list **a, t_list **b);
 void		ft_pb(t_list **a, t_list **b);

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/02 18:53:55 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:08:14 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_5numbers(t_list **a, t_list **b)
 			else
 				ft_caller("ra", a, b, 2);
 		}
-		if (ft_check_sort(*a, NULL))
+		if (ft_check_sort(*a, *b))
 			break ;
 		ft_caller("pb", a, b, 2);
 		arr[1] -= 1;

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 14:15:21 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 17:42:22 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int			ft_if_ordered(int *aux, t_utils *u, int argc);
 
 // OBJS
 
+void		ft_5_or_less(int argc, t_list **a, t_list **b);
 int			ft_flag_asignation(char *arg);
 void		ft_pa(t_list **a, t_list **b);
 void		ft_pb(t_list **a, t_list **b);
@@ -99,6 +100,6 @@ void		ft_push_swap(t_list **a, t_list **b, t_utils *u);
 int			ft_is_sorted(t_list *v);
 
 int			ft_check_next(int a, t_utils *u);
-void		ft_free_list(t_list *head);
+int			ft_free_list(t_list *head);
 void		ft_lstswap(t_list **s);
 #endif

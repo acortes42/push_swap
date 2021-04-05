@@ -6,13 +6,13 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 14:13:43 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:11:52 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_free_list(t_list *head)
+int	ft_free_list(t_list *head)
 {
 	t_list	*tmp;
 
@@ -22,6 +22,7 @@ void	ft_free_list(t_list *head)
 		head = head->next;
 		free(tmp);
 	}
+	return (1);
 }
 
 int	*ft_insertion_sort(int arr[], int argc)
@@ -82,12 +83,11 @@ void	execute_alghoritm(t_list *a, t_list *b, char **argv, int argc)
 	ft_insertion_sort(u->ordered, argc - 1);
 	if (ft_if_ordered(aux, u, argc) == 1)
 		return ;
-	if (argc <= 4)
-		ft_3numbers(&a, &b);
-	else if (argc < 100)
-		ft_5numbers(&a, &b);
+	else if (argc <= 6)
+		ft_5_or_less(argc, &a, &b);
 	else
 		ft_push_swap_backtrack(&a, &b, u);
+	free(u);
 }
 
 int	main(int argc, char **argv)
@@ -108,5 +108,7 @@ int	main(int argc, char **argv)
 	ft_lstadd_back(&a, NULL);
 	ft_lstadd_back(&b, NULL);
 	execute_alghoritm(a, b, argv, argc);
+	ft_free_list(a);
+	ft_free_list(b);
 	return (0);
 }

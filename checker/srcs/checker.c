@@ -6,11 +6,24 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 14:21:40 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:20:24 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
+
+int	ft_free_list(t_list *head)
+{
+	t_list	*tmp;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	return (1);
+}
 
 void	ft_print_checker(int x)
 {
@@ -38,6 +51,7 @@ void	ft_init_struct(t_struct *s_alpha)
 		if (c == '0')
 			break ;
 	}
+	s_alpha->string[i] = '\0';
 	s_alpha->parseString = ft_split(s_alpha->string, '\n');
 	return ;
 }
@@ -72,21 +86,25 @@ int	main(int argc, char **argv)
 {
 	t_list		*a;
 	t_list		*b;
-	t_struct	s_alpha;
+	t_struct	*s_alpha;
 	int			i;
 
 	i = 0;
-	ft_memset(&s_alpha, 0, sizeof(t_struct));
+	s_alpha = malloc(sizeof(t_struct));
 	ft_lstadd_back(&a, NULL);
 	ft_lstadd_back(&b, NULL);
 	ft_work_with_list(&a, argc, argv);
-	ft_init_struct(&s_alpha);
-	if (ft_check_if_all_correct(&s_alpha, argv, argc) == 1)
-		return (1);
-	i = -1;
-	while (s_alpha.parseString[++i])
-		ft_caller(s_alpha.parseString[i], &a, &b, \
-			ft_strlen(s_alpha.parseString[i]));
-	ft_ok_or_ko(argc, a, b, s_alpha);
+	ft_init_struct(s_alpha);
+	if (ft_check_if_all_correct(s_alpha, argv, argc) != 1)
+	{
+		i = -1;
+		while (s_alpha->parseString[++i])
+			ft_caller(s_alpha->parseString[i], &a, &b, \
+				ft_strlen(s_alpha->parseString[i]));
+		ft_ok_or_ko(argc, a, b, s_alpha);
+	}
+	ft_free_list(a);
+	ft_free_list(b);
+	ft_free_alpha(s_alpha);
 	return (0);
 }
