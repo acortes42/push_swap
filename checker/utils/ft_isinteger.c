@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 15:46:10 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/08 18:38:12 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	ft_isinteger(char *str)
 		is_int = 1;
 	else
 		is_int = 0;
-	if (trimmed)
-		free(trimmed);
+	free(trimmed);
 	return (is_int);
 }

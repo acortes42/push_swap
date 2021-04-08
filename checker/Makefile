@@ -6,7 +6,7 @@
 #    By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/31 17:54:07 by acortes-          #+#    #+#              #
-#    Updated: 2021/04/05 19:22:12 by acortes-         ###   ########.fr        #
+#    Updated: 2021/04/08 18:38:12 by acortes-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ fclean: clean
 	@rm -f ${NAME}
 	@rm -f *.a
 	@rm -f a.out
-	make -C libft fclean
+	make -C libft clean
 
 debug:	${OBJS}
 	${CC} -o ${NAME} ${CFLAGS_DEBUG} ${OBJS}

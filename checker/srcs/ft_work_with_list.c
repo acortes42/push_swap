@@ -6,22 +6,13 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 12:36:36 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 17:40:53 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/02 15:15:10 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-void	ft_free_alpha(t_struct *s_alpha)
-{
-	if (s_alpha->parseString)
-		free (s_alpha->parseString);
-	if (s_alpha)
-		free (s_alpha);
-	return ;
-}
-
-void	ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct *s_alpha)
+void	ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct s_alpha)
 {
 	int	i;
 
@@ -29,7 +20,7 @@ void	ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct *s_alpha)
 	print_list(a, b);
 	while (++i < argc - 1)
 	{
-		if (s_alpha->all_ord_int[i] != ft_get_int(a))
+		if (s_alpha.all_ord_int[i] != ft_get_int(a))
 		{
 			printf(ANSI_COLOR_RED"\nKO\n");
 			return ;

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 17:53:59 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 17:03:41 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/08 18:38:12 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // List of includes
 
+# include "../push_swap/push_swap.h"
 # include "libft/libft.h"
 # include <stdio.h>
 # include <stdlib.h>
@@ -39,13 +40,12 @@ typedef struct s_struct
 
 // UTILS
 
-void		ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct *s_alpha);
+void		ft_ok_or_ko(int argc, t_list *a, t_list *b, t_struct s_alpha);
 void		ft_init_struct(t_struct *s_alpha);
 int			ft_check_if_repeated(char **argv, int argc);
 int			ft_check_if_correct(char **argv, int argc);
 void		ft_work_with_list (t_list **a, int argc, char **argv);
 void		ft_putstr(char *s);
-void		ft_free_alpha(t_struct *s_alpha);
 char		**ft_split(char const *s, char c);
 void		*ft_memset(void *b, int c, size_t len);
 int			ft_check_if_all_correct(t_struct *s_alpha, char **argv, int argc);
@@ -59,23 +59,8 @@ int			ft_test_commmands(t_struct *s_alpha);
 void		delete_first_node(t_list **head);
 void		delete_last_node(t_list **head);
 void		ft_lstswap(t_list **s);
-int			ft_ptoint(int *p);
-void		print_list(t_list *a, t_list *b);
-void		ft_caller(char *call, t_list **a, t_list **b, int i);
-long int	ft_special_atoi(const char *j);
-int			ft_free_list(t_list *head);
 
-void		ft_pa(t_list **a, t_list **b);
-void		ft_pb(t_list **a, t_list **b);
-void		ft_ra(t_list **a);
-void		ft_rb(t_list **b);
-void		ft_rr(t_list **a, t_list **b);
-void		ft_rra(t_list **a);
-void		ft_rrb(t_list **b);
-void		ft_rrr(t_list **a, t_list **b);
-void		ft_sa(t_list **t);
-void		ft_sb(t_list **t);
-void		ft_ss(t_list **a, t_list **b);
+void		ft_caller(char *call, t_list **a, t_list **b, int i);
 
 int			ft_get_int(t_list *a);
 #endif

@@ -6,7 +6,7 @@
 /*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 17:48:15 by acortes-          #+#    #+#             */
-/*   Updated: 2021/04/05 13:48:23 by acortes-         ###   ########.fr       */
+/*   Updated: 2021/04/08 18:38:12 by acortes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_check_if_all_correct(t_struct *s_alpha, char **argv, int argc)
 	if (ft_check_if_correct(argv, argc) == 1 \
 		 || ft_check_if_repeated(argv, argc) == 1)
 	{
-		printf("Error en los argumentos\n");
+		printf(ANSI_COLOR_RED"Error en los argumentos\n");
 		return (1);
 	}
 	s_alpha->all_int = malloc(sizeof(int) * (argc - 1));
@@ -65,14 +65,6 @@ int	ft_check_if_all_correct(t_struct *s_alpha, char **argv, int argc)
 	}
 	ft_insertion_sort(s_alpha->all_ord_int, argc - 1);
 	return (0);
-}
-
-int	ft_ptoint(int *p)
-{
-	int	n;
-
-	n = *p;
-	return (n);
 }
 
 int	ft_get_int(t_list *a)
